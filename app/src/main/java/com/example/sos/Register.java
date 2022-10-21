@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class Register extends AppCompatActivity {
     Button b1,b2,b3;
     EditText e1;
-    ListView listView;
     SQLiteOpenHelper s1;
     SQLiteDatabase sqlitedb;
     DatabaseHandler myDB;
@@ -76,6 +75,7 @@ public class Register extends AppCompatActivity {
             while (data.moveToNext()){
                 theList.add(data.getString(1));
                 ListAdapter listAdapter = new ArrayAdapter<>(this , android.R.layout.simple_list_item_1,theList);
+                ListView listView = (ListView) findViewById(R.id.list);
                 listView.setAdapter(listAdapter);
             }
         }
