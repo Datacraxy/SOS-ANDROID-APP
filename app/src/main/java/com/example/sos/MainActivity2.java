@@ -89,8 +89,11 @@ public class MainActivity2 extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this,aboutus.class);
-                startActivity(intent);
+                String url = "https://drive.google.com/file/d/1YM9j9Ad55z647RCLrZPrxCA8c7LnvvC1/view";
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
     }
